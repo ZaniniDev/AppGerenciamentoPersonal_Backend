@@ -4,8 +4,14 @@ import {
   serializerCompiler,
   validatorCompiler,
   ZodTypeProvider,
+  jsonSchemaTransform,
+  createJsonSchemaTransform,
 } from "fastify-type-provider-zod";
+import fastify from "fastify";
+import fastifySwagger from "@fastify/swagger";
+import fastifySwaggerUI from "@fastify/swagger-ui";
 import z from "zod";
+const port = Number(process.env.PORT);
 
 const app = Fastify({
   logger: true,
@@ -16,6 +22,27 @@ app.setSerializerCompiler(serializerCompiler);
 // Declare a route
 app.get("/", async function handler(request, reply) {
   return { hello: "world" };
+});
+
+await app.register(fastifySwagger, {
+  openapi: {
+    info: {
+      title: "Gerenciamento de Treinos API",
+      description: "API para o app Gerenciamento de Treinos",
+      version: "1.0.0",
+    },
+    servers: [
+      {
+        description: "Localhost",
+        url: `http://localhost:${port}`,
+      },
+    ],
+  },
+  transform: jsonSchemaTransform,
+});
+
+await app.register(fastifySwaggerUI, {
+  routePrefix: "/docs",
 });
 
 app.withTypeProvider<ZodTypeProvider>().route({
@@ -39,7 +66,7 @@ app.withTypeProvider<ZodTypeProvider>().route({
 
 // Run the server!
 try {
-  await app.listen({ port: Number(process.env.PORT) || 3000 });
+  await app.listen({ port: port || 3000 });
 } catch (err) {
   app.log.error(err);
   process.exit(1);
