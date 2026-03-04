@@ -1,0 +1,38 @@
+{
+  "name": "appgerenciamentopersonal_backend",
+  "version": "1.0.0",
+  "description": "Aplicativo destinado ao gerenciamento de treinos para personal e/ou pessoal.",
+  "homepage": "https://github.com/ZaniniDev/AppGerenciamentoPersonal_Backend#readme",
+  "bugs": {
+    "url": "https://github.com/ZaniniDev/AppGerenciamentoPersonal_Backend/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZaniniDev/AppGerenciamentoPersonal_Backend.git"
+  },
+  "license": "ISC",
+  "author": "Marcus Zanini",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx --watch src/index.ts"
+  },
+  "engines": {
+    "node": "24.x"
+  },
+  "dependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^24.11.0",
+    "eslint": "^10.0.2",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "husky": "^9.1.7",
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "globals": "^17.4.0",
+    "prettier": "^3.8.1",
+    "tsx": "^4.21.0",
+    "typescript-eslint": "^8.56.1"
+  }
+}
