@@ -6,6 +6,10 @@ interface InputDto {
   heightInCentimeters: number;
   age: number;
   bodyFatPercentage: number;
+  goal: string | null;
+  workoutTimeExperience: number | null; //tempo de treino em anos
+  workoutFrequency: number | null; //frequencia de treino de 1 a 7 dias
+  workoutType: string | null;
 }
 
 interface OutputDto {
@@ -14,6 +18,10 @@ interface OutputDto {
   heightInCentimeters: number;
   age: number;
   bodyFatPercentage: number;
+  goal: string | null;
+  workoutTimeExperience: number | null; //tempo de treino em anos
+  workoutFrequency: number | null; //frequencia de treino de 1 a 7 dias
+  workoutType: string | null;
 }
 
 export class UpsertUserTrainData {
@@ -25,6 +33,10 @@ export class UpsertUserTrainData {
         heightInCentimeters: dto.heightInCentimeters,
         age: dto.age,
         bodyFatPercentage: dto.bodyFatPercentage,
+        goal: dto.goal,
+        workoutTimeExperience: dto.workoutTimeExperience,
+        workoutFrequency: dto.workoutFrequency,
+        workoutType: dto.workoutType,
       },
     });
 
@@ -34,6 +46,10 @@ export class UpsertUserTrainData {
       heightInCentimeters: user.heightInCentimeters!,
       age: user.age!,
       bodyFatPercentage: user.bodyFatPercentage!,
+      goal: user.goal,
+      workoutTimeExperience: user.workoutTimeExperience,
+      workoutFrequency: user.workoutFrequency,
+      workoutType: user.workoutType,
     };
   }
 }

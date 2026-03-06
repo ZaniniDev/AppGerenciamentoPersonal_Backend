@@ -11,6 +11,15 @@ interface OutputDto {
   heightInCentimeters: number;
   age: number;
   bodyFatPercentage: number;
+  goal: string | null;
+  workoutTimeExperience: number | null; //tempo de treino em anos
+  workoutFrequency: number | null; //frequencia de treino de 1 a 7 dias
+  workoutType: string | null;
+  isPersonal: boolean | false;
+  personalUserId: string | null;
+  personalWorkoutPlanId: string | null;
+  personalStartDate: string | null; //salva somente a data
+  personalFinishDate: string | null;
 }
 
 export class GetUserTrainData {
@@ -39,6 +48,21 @@ export class GetUserTrainData {
       heightInCentimeters: user.heightInCentimeters,
       age: user.age,
       bodyFatPercentage: user.bodyFatPercentage,
+      goal: user.goal,
+      workoutTimeExperience: user.workoutTimeExperience,
+      workoutFrequency: user.workoutFrequency,
+      workoutType: user.workoutType,
+      isPersonal: user.isPersonal,
+      personalUserId: user.personalUserId,
+      personalWorkoutPlanId: user.personalWorkoutPlanId,
+      personalStartDate:
+        user.personalStartDate != null
+          ? user.personalStartDate.toISOString()
+          : null,
+      personalFinishDate:
+        user.personalFinishDate != null
+          ? user.personalFinishDate.toISOString()
+          : null,
     };
   }
 }

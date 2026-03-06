@@ -33,7 +33,7 @@ export const StatsSchema = z.object({
     z.object({
       workoutDayCompleted: z.boolean(),
       workoutDayStarted: z.boolean(),
-    })
+    }),
   ),
   completedWorkoutsCount: z.number(),
   conclusionRate: z.number(),
@@ -60,7 +60,7 @@ export const HomeDataSchema = z.object({
     z.object({
       workoutDayCompleted: z.boolean(),
       workoutDayStarted: z.boolean(),
-    })
+    }),
   ),
 });
 
@@ -80,7 +80,7 @@ export const GetWorkoutDaySchema = z.object({
       sets: z.number(),
       reps: z.number(),
       restTimeInSeconds: z.number(),
-    })
+    }),
   ),
   sessions: z.array(
     z.object({
@@ -88,7 +88,7 @@ export const GetWorkoutDaySchema = z.object({
       workoutDayId: z.uuid(),
       startedAt: z.iso.date().optional(),
       completedAt: z.iso.date().optional(),
-    })
+    }),
   ),
 });
 
@@ -104,7 +104,7 @@ export const GetWorkoutPlanSchema = z.object({
       coverImageUrl: z.url().optional(),
       estimatedDurationInSeconds: z.number(),
       exercisesCount: z.number(),
-    })
+    }),
   ),
 });
 
@@ -136,11 +136,11 @@ export const ListWorkoutPlansSchema = z.array(
             sets: z.number(),
             reps: z.number(),
             restTimeInSeconds: z.number(),
-          })
+          }),
         ),
-      })
+      }),
     ),
-  })
+  }),
 );
 
 export const UpsertUserTrainDataBodySchema = z.object({
@@ -148,6 +148,10 @@ export const UpsertUserTrainDataBodySchema = z.object({
   heightInCentimeters: z.number().min(0),
   age: z.number().min(0),
   bodyFatPercentage: z.number().min(0).max(100),
+  goal: z.string().trim().nullable(),
+  workoutTimeExperience: z.number().min(0).nullable(), //tempo de treino em anos
+  workoutFrequency: z.number().min(0).max(7).nullable(), //frequencia de treino de 1 a 7 dias
+  workoutType: z.string().trim().nullable(),
 });
 
 export const UserTrainDataSchema = z.object({
@@ -157,6 +161,14 @@ export const UserTrainDataSchema = z.object({
   heightInCentimeters: z.number(),
   age: z.number(),
   bodyFatPercentage: z.number().min(0).max(100),
+  goal: z.string().trim().nullable(),
+  workoutTimeExperience: z.number().min(0).nullable(), //tempo de treino em anos
+  workoutFrequency: z.number().min(0).max(7).nullable(), //frequencia de treino de 1 a 7 dias
+  workoutType: z.string().trim().nullable(),
+  personalUserId: z.string().nullable(),
+  personalWorkoutPlanId: z.string().nullable(),
+  personalStartDate: z.iso.date().nullable(), //salva somente a data
+  personalFinishDate: z.iso.date().nullable(),
 });
 
 export const UpsertUserTrainDataSchema = z.object({
@@ -184,8 +196,8 @@ export const WorkoutPlanSchema = z.object({
           sets: z.number().min(1),
           reps: z.number().min(1),
           restTimeInSeconds: z.number().min(1),
-        })
+        }),
       ),
-    })
+    }),
   ),
 });
