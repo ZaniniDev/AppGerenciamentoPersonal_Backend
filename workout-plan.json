@@ -1,0 +1,233 @@
+{
+  "name": "Calistenia para Breaking (Bboy) - Transição e Base",
+  "workoutDays": [
+    {
+      "name": "Força Superior: Empurrar e Freezes (Push)",
+      "isRest": false,
+      "weekDay": "MONDAY",
+      "coverImageUrl": "https://gw8hy3fdcv.ufs.sh/f/ccoBDpLoAPCOgP9yzQkNGronCvXmSzAMs1N3KgLdE5yHT6Yk",
+      "estimatedDurationInSeconds": 3600,
+      "exercises": [
+        {
+          "order": 1,
+          "name": "Flexão Pseudo Planche (Prepara os punhos e ombros para freezes)",
+          "sets": 4,
+          "reps": 10,
+          "restTimeInSeconds": 120
+        },
+        {
+          "order": 2,
+          "name": "Flexão Pike (Base para Handstand/Parada de mão)",
+          "sets": 4,
+          "reps": 10,
+          "restTimeInSeconds": 120
+        },
+        {
+          "order": 3,
+          "name": "Frog Stand / Crow Pose (Isometria - Segundos)",
+          "sets": 4,
+          "reps": 30,
+          "restTimeInSeconds": 90
+        },
+        {
+          "order": 4,
+          "name": "Mergulho nas Paralelas (Dips)",
+          "sets": 3,
+          "reps": 12,
+          "restTimeInSeconds": 90
+        },
+        {
+          "order": 5,
+          "name": "Prancha com Inclinação Frontal (Isometria - Segundos)",
+          "sets": 3,
+          "reps": 45,
+          "restTimeInSeconds": 60
+        }
+      ]
+    },
+    {
+      "name": "Força Superior: Puxar e Pegada (Pull)",
+      "isRest": false,
+      "weekDay": "TUESDAY",
+      "coverImageUrl": "https://gw8hy3fdcv.ufs.sh/f/ccoBDpLoAPCOgP9yzQkNGronCvXmSzAMs1N3KgLdE5yHT6Yk",
+      "estimatedDurationInSeconds": 3600,
+      "exercises": [
+        {
+          "order": 1,
+          "name": "Barra Fixa Pronada (Pull-Ups)",
+          "sets": 4,
+          "reps": 8,
+          "restTimeInSeconds": 120
+        },
+        {
+          "order": 2,
+          "name": "Elevação de Pernas na Barra (Toes to Bar - Core e Compressão)",
+          "sets": 4,
+          "reps": 10,
+          "restTimeInSeconds": 120
+        },
+        {
+          "order": 3,
+          "name": "Remada Invertida (Australian Pull-Ups)",
+          "sets": 3,
+          "reps": 12,
+          "restTimeInSeconds": 90
+        },
+        {
+          "order": 4,
+          "name": "Skin the Cat (Prevenção de lesão de ombro/Base para Front Lever)",
+          "sets": 3,
+          "reps": 5,
+          "restTimeInSeconds": 120
+        },
+        {
+          "order": 5,
+          "name": "Suspensão Ativa na Barra (Grip - Segundos)",
+          "sets": 3,
+          "reps": 45,
+          "restTimeInSeconds": 60
+        }
+      ]
+    },
+    {
+      "name": "Inferiores: Explosão e Mobilidade para Toprock/Footwork",
+      "isRest": false,
+      "weekDay": "WEDNESDAY",
+      "coverImageUrl": "https://gw8hy3fdcv.ufs.sh/f/ccoBDpLoAPCOgP9yzQkNGronCvXmSzAMs1N3KgLdE5yHT6Yk",
+      "estimatedDurationInSeconds": 3600,
+      "exercises": [
+        {
+          "order": 1,
+          "name": "Agachamento com Salto (Jump Squats)",
+          "sets": 4,
+          "reps": 15,
+          "restTimeInSeconds": 90
+        },
+        {
+          "order": 2,
+          "name": "Progressão de Pistol Squat (Força unilateral e equilíbrio)",
+          "sets": 4,
+          "reps": 6,
+          "restTimeInSeconds": 120
+        },
+        {
+          "order": 3,
+          "name": "Agachamento Cossaco (Cossack Squat - Mobilidade de Quadril)",
+          "sets": 3,
+          "reps": 10,
+          "restTimeInSeconds": 90
+        },
+        {
+          "order": 4,
+          "name": "Afundo Pliométrico com Salto (Jumping Lunges)",
+          "sets": 3,
+          "reps": 12,
+          "restTimeInSeconds": 90
+        },
+        {
+          "order": 5,
+          "name": "Elevação de Panturrilha com Pausa",
+          "sets": 4,
+          "reps": 20,
+          "restTimeInSeconds": 60
+        }
+      ]
+    },
+    {
+      "name": "Core Avançado e Compressão (Específico Breaking)",
+      "isRest": false,
+      "weekDay": "THURSDAY",
+      "coverImageUrl": "https://gw8hy3fdcv.ufs.sh/f/ccoBDpLoAPCOgP9yzQkNGronCvXmSzAMs1N3KgLdE5yHT6Yk",
+      "estimatedDurationInSeconds": 3600,
+      "exercises": [
+        {
+          "order": 1,
+          "name": "Progressão de L-Sit no Solo (Isometria - Segundos)",
+          "sets": 4,
+          "reps": 20,
+          "restTimeInSeconds": 120
+        },
+        {
+          "order": 2,
+          "name": "Hollow Body Hold (Posição de Canoa - Segundos)",
+          "sets": 4,
+          "reps": 45,
+          "restTimeInSeconds": 90
+        },
+        {
+          "order": 3,
+          "name": "V-Ups (Abdominal Canivete - Explosão de Core)",
+          "sets": 3,
+          "reps": 15,
+          "restTimeInSeconds": 90
+        },
+        {
+          "order": 4,
+          "name": "Progressão de Dragon Flag",
+          "sets": 3,
+          "reps": 8,
+          "restTimeInSeconds": 120
+        },
+        {
+          "order": 5,
+          "name": "Prancha Lateral Dinâmica com Rotação",
+          "sets": 3,
+          "reps": 12,
+          "restTimeInSeconds": 60
+        }
+      ]
+    },
+    {
+      "name": "Dia de Descanso",
+      "isRest": true,
+      "weekDay": "FRIDAY",
+      "coverImageUrl": "https://gw8hy3fdcv.ufs.sh/f/ccoBDpLoAPCOgP9yzQkNGronCvXmSzAMs1N3KgLdE5yHT6Yk",
+      "estimatedDurationInSeconds": 1,
+      "exercises": []
+    },
+    {
+      "name": "Flexibilidade Extrema e Alongamento Ativo",
+      "isRest": false,
+      "weekDay": "SATURDAY",
+      "coverImageUrl": "https://gw8hy3fdcv.ufs.sh/f/ccoBDpLoAPCOgP9yzQkNGronCvXmSzAMs1N3KgLdE5yHT6Yk",
+      "estimatedDurationInSeconds": 2400,
+      "exercises": [
+        {
+          "order": 1,
+          "name": "Alongamento Pancake (Abertura de Pernas Sentado - Segundos)",
+          "sets": 3,
+          "reps": 60,
+          "restTimeInSeconds": 60
+        },
+        {
+          "order": 2,
+          "name": "Ponte / Backbend (Mobilidade de Coluna e Ombro - Segundos)",
+          "sets": 3,
+          "reps": 30,
+          "restTimeInSeconds": 90
+        },
+        {
+          "order": 3,
+          "name": "Alongamento Pike (Mãos nos Pés com Pernas Esticadas - Segundos)",
+          "sets": 3,
+          "reps": 60,
+          "restTimeInSeconds": 60
+        },
+        {
+          "order": 4,
+          "name": "Deslocamento de Ombros com Elástico/Toalha",
+          "sets": 3,
+          "reps": 15,
+          "restTimeInSeconds": 60
+        },
+        {
+          "order": 5,
+          "name": "Cócoras Profunda (Deep Squat Hold - Segundos)",
+          "sets": 3,
+          "reps": 60,
+          "restTimeInSeconds": 60
+        }
+      ]
+    }
+  ]
+}
