@@ -148,10 +148,10 @@ export const UpsertUserTrainDataBodySchema = z.object({
   heightInCentimeters: z.number().min(0),
   age: z.number().min(0),
   bodyFatPercentage: z.number().min(0).max(100),
-  goal: z.string().trim().nullable(),
-  workoutTimeExperience: z.number().min(0).nullable(), //tempo de treino em anos
-  workoutFrequency: z.number().min(0).max(7).nullable(), //frequencia de treino de 1 a 7 dias
-  workoutType: z.string().trim().nullable(),
+  goal: z.string().trim().optional(),
+  workoutTimeExperience: z.string().optional(), //tempo de treino em anos
+  workoutFrequency: z.number().min(0).max(7).optional(), //frequencia de treino de 1 a 7 dias
+  workoutType: z.string().trim().optional(),
 });
 
 export const UserTrainDataSchema = z.object({
@@ -161,22 +161,26 @@ export const UserTrainDataSchema = z.object({
   heightInCentimeters: z.number(),
   age: z.number(),
   bodyFatPercentage: z.number().min(0).max(100),
-  goal: z.string().trim().nullable(),
-  workoutTimeExperience: z.number().min(0).nullable(), //tempo de treino em anos
-  workoutFrequency: z.number().min(0).max(7).nullable(), //frequencia de treino de 1 a 7 dias
-  workoutType: z.string().trim().nullable(),
+  goal: z.string().trim().optional(),
+  workoutTimeExperience: z.string().optional(), //tempo de treino em anos
+  workoutFrequency: z.number().min(0).max(7).optional(), //frequencia de treino de 1 a 7 dias
+  workoutType: z.string().trim().optional(),
   personalUserId: z.string().nullable(),
   personalWorkoutPlanId: z.string().nullable(),
   personalStartDate: z.iso.date().nullable(), //salva somente a data
   personalFinishDate: z.iso.date().nullable(),
 });
 
-export const UpsertUserTrainDataSchema = z.object({
+export const UpsertUserTrainDataSchemaResponse = z.object({
   userId: z.string(),
   weightInGrams: z.number(),
   heightInCentimeters: z.number(),
   age: z.number(),
   bodyFatPercentage: z.number(),
+  goal: z.string().trim().optional(),
+  workoutTimeExperience: z.string().optional(), //tempo de treino em anos
+  workoutFrequency: z.number().min(0).max(7).optional(), //frequencia de treino de 1 a 7 dias
+  workoutType: z.string().trim().optional(),
 });
 
 export const WorkoutPlanSchema = z.object({

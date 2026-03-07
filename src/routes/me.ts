@@ -6,7 +6,7 @@ import { auth } from "../lib/auth.js";
 import {
   ErrorSchema,
   UpsertUserTrainDataBodySchema,
-  UpsertUserTrainDataSchema,
+  UpsertUserTrainDataSchemaResponse,
   UserTrainDataSchema,
 } from "../schemas/index.js";
 import { GetUserTrainData } from "../usecases/GetUserTrainData.js";
@@ -63,7 +63,7 @@ export const meRoutes = async (app: FastifyInstance) => {
       summary: "Upsert user train data",
       body: UpsertUserTrainDataBodySchema,
       response: {
-        200: UpsertUserTrainDataSchema,
+        200: UpsertUserTrainDataSchemaResponse,
         401: ErrorSchema,
         500: ErrorSchema,
       },

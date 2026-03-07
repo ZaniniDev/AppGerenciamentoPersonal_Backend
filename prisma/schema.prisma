@@ -29,7 +29,7 @@ model User {
   age                 Int?
   bodyFatPercentage   Int? // 100 representa 100% 
   goal String?
-  workoutTimeExperience Int? //tempo de treino em anos
+  workoutTimeExperience String? //tempo de treino em anos
   workoutFrequency Int? //frequencia de treino de 1 a 7 dias
   workoutType String? //tipo de treino
   isPersonal Boolean       @default(false)
@@ -54,6 +54,7 @@ model WorkoutPlan {
   personalUserId String?
   workoutStartDate DateTime?
   workoutFinishDate DateTime?
+  planGoal String?
 }
 
 enum WeekDay {
@@ -75,11 +76,12 @@ model WorkoutDay {
   weekDay                    WeekDay
   exercises                  WorkoutExercise[]
   estimatedDurationInSeconds Int
-  workoutTime String? //horario que o usuario treinará ex: 15:30
   coverImageUrl              String?
   createdAt                  DateTime          @default(now()) @db.Timestamptz()
   updatedAt                  DateTime          @updatedAt @db.Timestamptz()
   sessions                   WorkoutSession[]
+  workoutTime String? //horario que o usuario treinará ex: 15:30
+
 }
 
 model WorkoutExercise {
@@ -93,6 +95,29 @@ model WorkoutExercise {
   restTimeInSeconds Int
   createdAt         DateTime   @default(now()) @db.Timestamptz()
   updatedAt         DateTime   @updatedAt @db.Timestamptz()
+  obs String?
+  exerciseLoad String?
+  exerciseId String?
+  exercise Exercise? @relation(fields: [exerciseId], references: [id], onDelete: SetNull)
+}
+
+model Exercise {
+  id                String     @id @default(uuid())
+  name              String
+  typeExercise TypeExercise?
+  description String?
+  imageUrl String?
+  videoUrl String?
+  gifUrl String?
+  workoutExercises  WorkoutExercise[]
+  createdAt         DateTime   @default(now()) @db.Timestamptz()
+  updatedAt         DateTime   @updatedAt @db.Timestamptz()
+}
+
+enum TypeExercise {
+  ACADEMIA
+  CORRIDA
+  YOGA
 }
 
 model WorkoutSession {
