@@ -80,8 +80,14 @@ model WorkoutDay {
   createdAt                  DateTime          @default(now()) @db.Timestamptz()
   updatedAt                  DateTime          @updatedAt @db.Timestamptz()
   sessions                   WorkoutSession[]
-  workoutTime String? //horario que o usuario treinará ex: 15:30
-
+  workoutTime String?        //horario que o usuario treinará ex: 15:30
+  typeWorkout TypeWorkout
+}
+enum TypeWorkout {
+  BREAKING
+  MUSCULAÇÃO
+  MOBILIDADE
+  CORRIDA
 }
 
 model WorkoutExercise {
@@ -95,8 +101,13 @@ model WorkoutExercise {
   restTimeInSeconds Int
   createdAt         DateTime   @default(now()) @db.Timestamptz()
   updatedAt         DateTime   @updatedAt @db.Timestamptz()
+  typeExercise TypeExercise?
   obs String?
   exerciseLoad String?
+  description String?
+  imageUrl String?
+  videoUrl String?
+  gifUrl String?
   exerciseId String?
   exercise Exercise? @relation(fields: [exerciseId], references: [id], onDelete: SetNull)
 }

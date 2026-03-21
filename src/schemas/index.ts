@@ -183,6 +183,70 @@ export const UpsertUserTrainDataSchemaResponse = z.object({
   workoutType: z.string().trim().optional(),
 });
 
+export const CreateWorkoutPlanForUserBodySchema = z.object({
+  name: z.string().trim().min(1),
+  planGoal: z.string().trim().min(1),
+  workoutStartDate: z.iso.datetime().optional(),
+  workoutFinishDate: z.iso.datetime().optional(),
+  workoutDays: z.array(
+    z.object({
+      name: z.string().trim().min(1),
+      weekDay: z.enum(WeekDay),
+      isRest: z.boolean().default(false),
+      estimatedDurationInSeconds: z.number().min(1),
+      coverImageUrl: z.url().optional(),
+      workoutTime: z.iso.time().optional(),
+      exercises: z.array(
+        z.object({
+          order: z.number().min(0),
+          name: z.string().trim().min(1),
+          sets: z.number().min(1),
+          reps: z.number().min(1),
+          restTimeInSeconds: z.number().min(0),
+          obs: z.string().optional(),
+          exerciseLoad: z.string().optional(),
+          exerciseId: z
+            .string()
+            .optional()
+            .transform((v) => (v === "" ? undefined : v)),
+        }),
+      ),
+    }),
+  ),
+});
+
+export const CreateWorkoutPlanForUserSchema = z.object({
+  id: z.uuid(),
+  name: z.string(),
+  planGoal: z.string().optional(),
+  workoutStartDate: z.iso.datetime().optional(),
+  workoutFinishDate: z.iso.datetime().optional(),
+  workoutDays: z.array(
+    z.object({
+      id: z.uuid(),
+      name: z.string(),
+      weekDay: z.enum(WeekDay),
+      isRest: z.boolean(),
+      estimatedDurationInSeconds: z.number(),
+      coverImageUrl: z.url().optional(),
+      workoutTime: z.string().optional(),
+      exercises: z.array(
+        z.object({
+          id: z.uuid(),
+          order: z.number(),
+          name: z.string(),
+          sets: z.number(),
+          reps: z.number(),
+          restTimeInSeconds: z.number(),
+          obs: z.string().optional(),
+          exerciseLoad: z.string().optional(),
+          exerciseId: z.uuid().optional().nullable(),
+        }),
+      ),
+    }),
+  ),
+});
+
 export const WorkoutPlanSchema = z.object({
   id: z.uuid(),
   name: z.string().trim().min(1),
